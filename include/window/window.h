@@ -6,12 +6,22 @@
 
 namespace UIK {
 	/**
+	 * @class Window
+	 * @ingroup Window
+	 *
 	 * Window rendering.
 	 */
 	class Window {
 		public:
+			/** Window height */
+			static unsigned int Height;
+
+			/** Window width */
+			static unsigned int Width;
+
+
 			/**
-			 * Create or recreate the window.
+			 * Create or recreate window.
 			 *
 			 * If the window was already created, it closes it first.
 			 *
@@ -26,40 +36,22 @@ namespace UIK {
 				unsigned         int  height,
 				unsigned         int  style
 			);
-			
+
 			/**
-			 * Close the window and destroy.
+			 * Destroy current window.
 			 *
-			 * All other functions work normally, you do not need test IsOpen()
+			 * All other functions work normally, you do not need test IsCreated()
 			 * all the time, and will have no effect on the windows closed.
 			 */
-			static void Close();
-			
+			static void Destroy();
+
 			/**
-			 * Change the title of the window.
+			 * Change the window title.
 			 *
-			 * @param title New window title.
+			 * @param title New title.
 			 */
-			static void Title(
-				const std::string& title
-			);
-			
-			/**
-			 * It says if the window is open or not.
-			 *
-			 * This function returns whether or not the window exists.
-			 * Note that a hidden window is open therefore this function would
-			 * return true.
-			 *
-			 * @return boolean
-			 */
-			static bool IsOpen();
-			
-			/**
-			 * Internal event processing function.
-			 */
-			static void PeekEvent(); 
-			
+			static void SetTitle(const std::string& title);
+
 			/**
 			 * Show or hide the window.
 			 *
@@ -68,7 +60,29 @@ namespace UIK {
 			 * @param visible Show or hide.
 			 */
 			static void Visible(bool visible);
-			
+
+			/**
+			 * Switch to fullscreen.
+			 *
+			 * @param enable Enable or disable fullscreen.
+			 */
+			static void Fullscreen(bool enable);
+
+			/**
+			 * Checks if the window was created.
+			 *
+			 * This function returns whether or not the window exists.
+			 * Note that a hidden window is still there, so this function should return true.
+			 *
+			 * @return boolean
+			 */
+			static bool IsCreated();
+
+			/**
+			 * Internal event processing function.
+			 */
+			static void PeekEvent();
+
 			/**
 			 * Display on screen what has been rendered.
 			 *
