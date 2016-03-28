@@ -1,9 +1,10 @@
-#ifndef UIK
-#define UIK
+#ifndef UIK_
+#define UIK_
 
 #include "window/window.h"
 #include "window/windowstyle.h"
-#include "window/keyboard.h"
-#include "window/mouse.h"
+
+#include "input/mouse.h"
+#include "input/keyboard.h"
 
 #endif
