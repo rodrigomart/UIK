@@ -5,9 +5,9 @@ namespace UIK {
 	namespace WindowStyle {
 		/** Window style */
 		enum {
-			Fullscreen = 1 << 3,
-			Window     = 1 << 2,
-			PopUp      = 1 << 1
+			Fullscreen = 0xFFFF,
+			Window     = 0xFF00,
+			PopUp      = 0x1111
 		};
 	}
 }
