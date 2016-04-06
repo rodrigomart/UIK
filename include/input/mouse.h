@@ -51,7 +51,7 @@ namespace UIK {
 			 *
 			 * @param point Sets the cursor position.
 			 */
-			static void SetPosition(const Point point);
+			static void SetPosition(const Point& point);
 	};
 }
 
